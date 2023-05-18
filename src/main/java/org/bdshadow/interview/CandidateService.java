@@ -19,4 +19,9 @@ public class CandidateService {
     public List<Candidate> getAllCandidates() {
         return candidateRepository.findAll();
     }
+
+    @Transactional
+    public List<Candidate> getCandidatesWithNoStatus() {
+        return candidateRepository.findAllByStatusNull();
+    }
 }
